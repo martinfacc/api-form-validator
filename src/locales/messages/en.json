@@ -1,0 +1,9 @@
+{
+  "required": "The field is required",
+  "max": "The field cannot have more than {{expected}} characters",
+  "min": "The field cannot have less than {{expected}} characters",
+  "isInteger": "The field must be an integer",
+  "isFloat": "The field must be a decimal number",
+  "maxLength": "The field cannot have more than {{expected}} characters",
+  "minLength": "The field cannot have less than {{expected}} characters"
+}

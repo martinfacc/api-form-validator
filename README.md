@@ -9,7 +9,6 @@ An API to validate your data.
 
 In order to use this module, run
 
-
 ```bash
 $ npm install fva
 ```

@@ -1,0 +1,8 @@
+next types:
+
+  date
+  bigint
+  symbol
+  boolean
+  object
+  array

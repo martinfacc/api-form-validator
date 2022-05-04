@@ -5,11 +5,21 @@ import Session from '../models/session.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
+/**
+ * This function takes a password, generates a salt, and then hashes the password with the salt.
+ * @param password - The password to hash.
+ * @returns The hashPassword function is returning the hashed password.
+ */
 const hashPassword = async (password) => {
 	const salt = await bcrypt.genSalt(10)
 	return await bcrypt.hash(password, salt)
 }
 
+/**
+ * It creates a new session and saves it to the database.
+ * @param user - {
+ * @returns The session object is being returned.
+ */
 const addNewSession = async (user) => {
 	try {
 		const session = new Session({ userId: user._id })
@@ -20,6 +30,15 @@ const addNewSession = async (user) => {
 	}
 }
 
+/**
+ * It takes a request, response, and next function as arguments, and then it tries to create a new
+ * user, hash the password, save the user, and then send a response.
+ * @param request - The request object contains information about the HTTP request that raised the
+ * event.
+ * @param response - The response object represents the HTTP response that an Express app sends when it
+ * gets an HTTP request.
+ * @param next - a function that you call to pass control to the next middleware function.
+ */
 export const signup = async (request, response, next) => {
 	try {
 		const newUser = request.body

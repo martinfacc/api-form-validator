@@ -7,6 +7,8 @@ import cors from 'cors'
 import logger from './logger.js'
 import notFound from './middlewares/notFound.js'
 import errorHandler from './middlewares/errorHandler.js'
+import languageHandler from './middlewares/languageHandler.js'
+import validationRouter from './routes/validation.js'
 // import userRouter from './routes/user.js'
 
 const { APP_PORT } = process.env
@@ -15,6 +17,9 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 app.use(logger)
+app.use(languageHandler)
+
+app.use('/', validationRouter)
 
 // app.use('/api/user', userRouter)
 app.use(notFound)

@@ -1,7 +1,22 @@
 import { isInteger } from '../utils/number.js'
 
-test('isInteger of string', () => {
+test('isInteger of bigint', () => {
+	const result = isInteger(1n)
+	expect(result).toBe(true)
+})
+
+test('isInteger of "1"', () => {
 	const result = isInteger('1')
+	expect(result).toBe(true)
+})
+
+test('isInteger of "-1"', () => {
+	const result = isInteger('-1')
+	expect(result).toBe(true)
+})
+
+test('isInteger of string', () => {
+	const result = isInteger('string')
 	expect(result).toBe(false)
 })
 

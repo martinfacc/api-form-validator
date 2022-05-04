@@ -1,7 +1,22 @@
 import { isUnsignedInteger } from '../utils/number.js'
 
-test('isUnsignedInteger of string', () => {
+test('isUnsignedInteger of bigint', () => {
+	const result = isUnsignedInteger(1n)
+	expect(result).toBe(true)
+})
+
+test('isUnsignedInteger of "1"', () => {
 	const result = isUnsignedInteger('1')
+	expect(result).toBe(true)
+})
+
+test('isUnsignedInteger of "-1"', () => {
+	const result = isUnsignedInteger('-1')
+	expect(result).toBe(false)
+})
+
+test('isUnsignedInteger of string', () => {
+	const result = isUnsignedInteger('string')
 	expect(result).toBe(false)
 })
 

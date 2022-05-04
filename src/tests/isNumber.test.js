@@ -1,7 +1,22 @@
 import { isNumber } from '../utils/number.js'
 
-test('isNumber of string', () => {
+test('isNumber of bigint', () => {
+	const result = isNumber(1n)
+	expect(result).toBe(true)
+})
+
+test('isNumber of "1"', () => {
 	const result = isNumber('1')
+	expect(result).toBe(true)
+})
+
+test('isNumber of "-1"', () => {
+	const result = isNumber('-1')
+	expect(result).toBe(true)
+})
+
+test('isNumber of string', () => {
+	const result = isNumber('string')
 	expect(result).toBe(false)
 })
 
@@ -27,6 +42,16 @@ test('isNumber of null', () => {
 
 test('isNumber of undefined', () => {
 	const result = isNumber(undefined)
+	expect(result).toBe(false)
+})
+
+test('isNumber of function', () => {
+	const result = isNumber(() => { })
+	expect(result).toBe(false)
+})
+
+test('isNumber of Symbol', () => {
+	const result = isNumber(Symbol('symbol'))
 	expect(result).toBe(false)
 })
 

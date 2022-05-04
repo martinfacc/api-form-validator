@@ -7,6 +7,9 @@ process.on('SIGINT', () => {
 	})
 })
 
+/**
+ * It connects to MongoDB using the Mongoose library.
+ */
 export const connectToMongo = async () => {
 	try {
 		const {

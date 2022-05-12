@@ -1,0 +1,12 @@
+{
+  "required": "Feltet er påkrævet",
+  "max": "Feltet må ikke have mere end {{expected}} tegn",
+  "min": "Feltet må ikke have mindre end {{expected}} tegn",
+  "isInteger": "Feltet skal være et heltal",
+  "isPositive": "Feltet skal være et positivt tal",
+  "maxLength": "Feltet må ikke have mere end {{expected}} tegn",
+  "minLength": "Feltet må ikke have mindre end {{expected}} tegn",
+  "isUpperCase": "Feltet skal være skrevet med store bogstaver",
+  "isLowerCase": "Feltet skal være skrevet med små bogstaver",
+  "isEmail": "Feltet skal være en gyldig e-mail-adresse"
+}

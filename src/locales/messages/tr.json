@@ -1,0 +1,12 @@
+{
+  "required": "Alan zorunludur",
+  "max": "Alan en fazla {{expected}} karakter içeremez",
+  "min": "Alan en az {{expected}} karakter içermelidir",
+  "isInteger": "Alan tam sayı olmalıdır",
+  "isPositive": "Alan pozitif tam sayı olmalıdır",
+  "maxLength": "Alan en fazla {{expected}} karakter içeremez",
+  "minLength": "Alan en az {{expected}} karakter içermelidir",
+  "isUpperCase": "Alan büyük harfle yazılmalıdır",
+  "isLowerCase": "Alan küçük harfle yazılmalıdır",
+  "isEmail": "Alan geçerli bir e-posta adresi olmalıdır"
+}

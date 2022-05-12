@@ -1,0 +1,12 @@
+{
+  "required": "Das Feld ist erforderlich",
+  "max": "Das Feld darf nicht mehr als {{expected}} Zeichen enthalten",
+  "min": "Das Feld darf nicht weniger als {{expected}} Zeichen enthalten",
+  "isInteger": "Das Feld muss eine ganze Zahl sein",
+  "isPositive": "Das Feld muss eine positive Zahl sein",
+  "maxLength": "Das Feld darf nicht mehr als {{expected}} Zeichen enthalten",
+  "minLength": "Das Feld darf nicht weniger als {{expected}} Zeichen enthalten",
+  "isUpperCase": "Das Feld muss in Großbuchstaben geschrieben werden",
+  "isLowerCase": "Das Feld muss in Kleinbuchstaben geschrieben werden",
+  "isEmail": "Das Feld muss eine gültige E-Mail-Adresse sein"
+}

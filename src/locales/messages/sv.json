@@ -1,0 +1,12 @@
+{
+  "required": "Fältet är obligatorisk",
+  "max": "Fältet får inte innehålla fler än {{expected}} tecken",
+  "min": "Fältet får inte innehålla färre än {{expected}} tecken",
+  "isInteger": "Fältet måste vara ett heltal",
+  "isPositive": "Fältet måste vara ett positivt tal",
+  "maxLength": "Fältet får inte innehålla fler än {{expected}} tecken",
+  "minLength": "Fältet får inte innehålla färre än {{expected}} tecken",
+  "isUpperCase": "Fältet måste vara skrivet med stora bokstäver",
+  "isLowerCase": "Fältet måste vara skrivet med gemena bokstäver",
+  "isEmail": "Fältet måste vara en giltig e-postadress"
+}

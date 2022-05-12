@@ -140,5 +140,20 @@ dataFour: {
 
 <hr>
 
+# Acepted languages
+	da: Danish
+	de: German
+	en: English
+	es: Spanish (default)
+	fi: Finnish
+	fr: French
+	it: Italian
+	nl: Dutch
+	pt: Portuguese
+	sv: Swedish
+	tr: Turkish
+
+<hr>
+
 # Preview
 See a live preview [here](https://fvapi.martinfacciuto.site).

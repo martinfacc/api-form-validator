@@ -1,0 +1,12 @@
+{
+  "required": "Kenttä on vaadittu",
+  "max": "Kenttä ei voi olla pidempi kuin {{expected}} merkkiä",
+  "min": "Kenttä ei voi olla lyhyempi kuin {{expected}} merkkiä",
+  "isInteger": "Kentän tulee olla kokonaisluku",
+  "isPositive": "Kentän tulee olla positiivinen luku",
+  "maxLength": "Kenttä ei voi olla pidempi kuin {{expected}} merkkiä",
+  "minLength": "Kenttä ei voi olla lyhyempi kuin {{expected}} merkkiä",
+  "isUpperCase": "Kenttä tulee olla isoilla kirjaimilla",
+  "isLowerCase": "Kenttä tulee olla pienellä kirjaimella",
+  "isEmail": "Kenttä tulee sisältää kelvollinen sähköpostios"
+}

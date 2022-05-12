@@ -1,0 +1,12 @@
+{
+  "required": "Het veld is verplicht",
+  "max": "Het veld mag niet meer dan {{expected}} karakters bevatten",
+  "min": "Het veld mag niet minder dan {{expected}} karakters bevatten",
+  "isInteger": "Het veld moet een geheel getal zijn",
+  "isPositive": "Het veld moet een positief getal zijn",
+  "maxLength": "Het veld mag niet meer dan {{expected}} karakters bevatten",
+  "minLength": "Het veld mag niet minder dan {{expected}} karakters bevatten",
+  "isUpperCase": "Het veld moet in hoofdletters zijn",
+  "isLowerCase": "Het veld moet in kleine letters zijn",
+  "isEmail": "Het veld moet een geldig e-mailadres zijn"
+}

@@ -1,0 +1,12 @@
+{
+  "required": "Il campo è obbligatorio",
+  "max": "Il campo non può avere più di {{expected}} caratteri",
+  "min": "Il campo non può avere meno di {{expected}} caratteri",
+  "isInteger": "Il campo deve essere un numero intero",
+  "isPositive": "Il campo deve essere un numero positivo",
+  "maxLength": "Il campo non può avere più di {{expected}} caratteri",
+  "minLength": "Il campo non può avere meno di {{expected}} caratteri",
+  "isUpperCase": "Il campo deve essere in maiuscolo",
+  "isLowerCase": "Il campo deve essere in minuscolo",
+  "isEmail": "Il campo deve essere un email valido"
+}

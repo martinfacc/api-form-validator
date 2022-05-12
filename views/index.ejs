@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FVAPI - Martin Facciuto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://martinfacciuto.site/assets/favicon.png">
+  <style>
+    * {
+      --black: #24292e;
+      --white: #e1e4e8;
+      --gray: #6a737d;
+      --blue: #79b7ff;
+      --red: #e05d44;
+      --violet: #b392f0;
+      --lite-blue: #9ecbff;
+      font-family: 'Fira Code', monospace;
+      font-weight: 500;
+    }
+
+    html {
+      font-size: 15px;
+    }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      margin: 0;
+    }
+
+    #app {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      height: 100vh;
+    }
+
+    #app>div {
+      border-left: 2px solid rgba(255, 255, 255, .1);
+      height: 90vh;
+    }
+
+    label {
+      display: block;
+      margin-left: 25px;
+    }
+
+    a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    span,
+    label,
+    a {
+      font-size: 1rem;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    span.g {
+      color: var(--gray);
+    }
+
+    span.b {
+      color: var(--blue);
+    }
+
+    span.r {
+      color: var(--red);
+    }
+
+    span.v {
+      color: var(--violet);
+    }
+
+    span.l {
+      color: var(--lite-blue);
+    }
+
+    @media (max-width: 1632px) {
+      html {
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 1488px) {
+      html {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 1344px) {
+      html {
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      html {
+        font-size: 10px;
+      }
+    }
+
+    @media (max-width: 1056px) {
+      html {
+        font-size: 9px;
+      }
+    }
+
+    @media (max-width: 912px) {
+      html {
+        font-size: 8px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      html {
+        font-size: 7px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      html {
+        font-size: 15px;
+      }
+
+      #app {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        height: auto;
+        margin: 20px 0;
+      }
+
+      #app>div {
+        border-left: none;
+        height: 0;
+      }
+    }
+  </style>
+</head>
+
+<script>
+  const userOne = {
+    firstName: 'Lucas',
+    lastName: 'Lezcano',
+    email: 'lucaslez@gmail.com'
+  }
+
+  const userTwo = {
+    firstName: 'Matias',
+    lastName: 'Puringa',
+    email: 'matias_puringa@hotmail'
+  }
+
+  const userThree = {
+    firstName: '',
+    lastName: 'Avila',
+    email: 'diegoA@yahoo.com.ar'
+  }
+
+  const { firstName: name, email } = userThree
+
+  const result = {
+    dataOne: {
+      errors: {}
+    },
+    dataTwo: {
+      errors: {
+        email: 'The field must be a valid email address'
+      }
+    },
+    dataThree: {
+      errors: {
+        firstName: 'El campo es requerido'
+      }
+    }
+  }
+
+</script>
+
+<body>
+  <div id="app">
+    <article>
+      <label>
+        <span class="r">const</span> <span class="b">userSchema</span> <span class="r">=</span> {
+        <label>
+          firstName: {
+          <label>type: <span class="l">'string'</span>,</label>
+          <label>rules: {
+            <label>required: <span class="b">true</span>,</label>
+            <label>minlength: <span class="b">3</span>,</label>
+            <label>maxlength: <span class="b">20</span></label>
+            }
+          </label>
+          },
+        </label>
+        <label>
+          lastName: {
+          <label>type: <span class="l">'string'</span>,</label>
+          <label>rules: {
+            <label>required: <span class="b">true</span>,</label>
+            <label>minlength: <span class="b">3</span>,</label>
+            <label>maxlength: <span class="b">20</span></label>
+            }
+          </label>
+          },
+        </label>
+        <label>
+          email: {
+          <label>type: <span class="l">'string'</span>,</label>
+          <label>rules: {
+            <label>required: <span class="b">true</span>,</label>
+            <label>isEmail: <span class="b">true</span></label>
+            }
+          </label>
+          }
+        </label>
+        }
+      </label>
+      <br />
+      <label>
+        <span class="r">const</span> <span class="b">userOne</span> <span class="r">=</span> {
+        <label>firstName: <span class="l">'Lucas'</span>,</label>
+        <label>lastName: <span class="l">'Lezano'</span>,</label>
+        <label>email: <span class="l">'lucaslez@gmail.com'</span></label>
+        }
+      </label>
+      <br />
+      <label>
+        <span class="r">const</span> <span class="b">userTwo</span> <span class="r">=</span> {
+        <label>firstName: <span class="l">'Matias'</span>,</label>
+        <label>lastName: <span class="l">'Purita'</span>,</label>
+        <label>email: <span class="l">'matias_purita@hotmail'</span></label>
+        }
+      </label>
+      <br />
+    </article>
+    <div></div>
+    <article>
+      <label>
+        <span class="r">const</span> <span class="b">URL</span> <span class="r">=</span> <span
+          class="l">'https://fvapi.martinfacciuto.site'</span>
+      </label>
+      <br />
+      <label>
+        <span class="r">const</span> { data: <span class="b">dataOne</span> } <span class="r">= await</span> axios.<span
+          class="v">post</span>(<span class="b">URL</span>, {
+        <label>schema: <span class="b">userSchema</span>,</label>
+        <label>data: <span class="b">userOne</span></label>
+        })
+      </label>
+      <br />
+      <label>
+        <span class="r">const</span> { data: <span class="b">dataTwo</span> } <span class="r">= await</span> axios.<span
+          class="v">post</span>(<span class="b">URL</span>, {
+        <label>schema: <span class="b">userSchema</span>,</label>
+        <label>data: <span class="b">userTwo</span></label>
+        })
+      </label>
+      <br />
+      <label>
+        <span class="r">const</span> { data: <span class="b">dataThree</span> } <span class="r">= await</span>
+        axios.<span class="v">post</span>(
+        <label><span class="b">URL</span>,</label>
+        <label>
+          {
+          <label>schema: <span class="b">userSchema</span>,</label>
+          <label>data: <span class="b">userTwo</span></label>
+          },
+        </label>
+        <label>
+          {
+          <label>
+            headers: {
+            <label>
+              <span class="l">'Accept-Language':</span> <span class="l">'en'</span>
+            </label>
+            }
+          </label>
+          }
+        </label>
+        )
+      </label>
+      <br />
+    </article>
+    <div></div>
+    <article>
+      <label>
+        {
+        <label>
+          dataOne: {
+          <label>errors: {}</label>
+          },
+        </label>
+        <label>
+          dataTwo: {
+          <label>errors: {
+            <label>email: <span class="l">'El campo debe ser un email válido'</span></label>
+            }</label>
+          },
+        </label>
+        <label>
+          dataTree: {
+          <label>errors: {
+            <label>email: <span class="l">'The field must be a valid email address'</span></label>
+            }</label>
+          }
+        </label>
+        }
+      </label>
+      <br />
+      <label>
+        <span class="g">/* More details here: */ <a target="_blank"
+            href="https://github.com/martinfacc/fvapi">https://github.com/martinfacc/fvapi</a></span>
+      </label>
+    </article>
+  </div>
+</body>
+
+</html>

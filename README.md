@@ -1,48 +1,144 @@
 # Form Validator API - FVAPI
 
-
 An API to validate your data.
 
 <hr>
 
-# Installation
-
-In order to use this module, run
-
-```bash
-$ npm install fva
-```
-
-# Usage
+# Usage example
 
 ```javascript
-const fva = require("fva")
-const data = require("../data.json")
+import axios from 'axios'
 
-const jsonRules = {
-    title: { required: true },
-    description: { required: false },
-    author: { required: true },
-    authorEmail: { email: true }, 
-    authorAge: { number: true }
+const userSchema = {
+	firstName: {
+		type: 'string',
+		rules: {
+			required: true,
+			minLength: 3,
+			maxLength: 20
+		}
+	},
+	lastName: {
+		type: 'string',
+		rules: {
+			required: true,
+			minLength: 5,
+			maxLength: 20
+		}
+	},
+	email: {
+		type: 'string',
+		rules: {
+			required: true,
+			isEmail: true
+		}
+	}
 }
 
-const customErrorMessages = {
-    title: { required: "This is a required field" },
-    description: { required: "This is a required field" },
-    author: { required: "This is a required field" },
-    authorEmail: { email: "This is an email field" }, 
-    authorAge: { number: "This is a number field" }
+const userOne = {
+	firstName: 'Lucas',
+	lastName: 'Lezcano',
+	email: 'lucaslez@gmail.com'
 }
-                              //The third parameter is not required
-fva.validate(data, jsonRules, customErrorMessages) 
-    .then(res => {
-        //Do something...
-    })
-    .catch(err => {
-        //Handle error...
-    })
+
+const userTwo = {
+	firstName: 'Matias',
+	lastName: 'Puringa',
+	email: 'matias_puringa@hotmail'
+}
+
+const userThree = {
+	firstName: '',
+	lastName: 'Avila',
+	email: 'davila@yahoo.com'
+}
+
+const userFour = {
+	firstName: 'Bron',
+	lastName: 'Kass',
+	email: 'elbronkass@gmail.com'
+}
+
+const { data: dataOne } = await axios.post('https://fvapi.martinfacciuto.site', {
+	schema: userSchema,
+	data: userOne
+})
+
+const { data: dataTwo } = await axios.post('https://fvapi.martinfacciuto.site', {
+	schema: userSchema,
+	data: userTwo
+})
+
+const { data: dataThree } = await axios.post('https://fvapi.martinfacciuto.site', {
+	schema: userSchema,
+	data: userThree
+})
+
+const { data: dataFour } = await axios.post(
+	'https://fvapi.martinfacciuto.site',
+	{ schema: userSchema, data: userFour },
+	{ headers: { 'Acepted-Language': 'en' }
+})
+
+/*
+
+dataOne: {
+	errors: {}
+}
+
+dataTwo: {
+	errors: {
+		email: 'El campo debe ser un email válido'
+	}
+}
+
+dataThree: {
+	errors: {
+		email: 'El campo es requerido'
+	}
+}
+
+dataFour: {
+	errors: {
+		lastName: 'The field cannot have less than 5 characters'
+	}
+}
+
+*/
+
+
 ``` 
 
+<hr>
+
+# Documentation - Data types supported and their rules
+
+```javascript
+{
+	string: {
+		rules: [
+			required,
+			minLength,
+			maxLength,
+			isUppercase,
+			isLowercase,
+			isEmail
+		]
+	},
+	number: {
+		rules: [
+			required,
+			min,
+			max,
+			isInteger,
+			isPositive
+		]
+	}
+}
+
+``` 
+
+<hr>
+
 # Preview
-See a live preview [here](https://repl.it/@Margato/fvaExample).
+See a live preview [here](https://fvapi.martinfacciuto.site).

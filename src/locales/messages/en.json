@@ -3,7 +3,10 @@
   "max": "The field cannot have more than {{expected}} characters",
   "min": "The field cannot have less than {{expected}} characters",
   "isInteger": "The field must be an integer",
-  "isFloat": "The field must be a decimal number",
+  "isPositive": "The field must be a positive number",
   "maxLength": "The field cannot have more than {{expected}} characters",
-  "minLength": "The field cannot have less than {{expected}} characters"
+  "minLength": "The field cannot have less than {{expected}} characters",
+  "isUpperCase": "The field must be in upper case",
+  "isLowerCase": "The field must be in lower case",
+  "isEmail": "The field must be a valid email address"
 }

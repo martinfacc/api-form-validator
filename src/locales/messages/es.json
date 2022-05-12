@@ -3,7 +3,10 @@
 	"max": "El campo no puede tener más de {{expected}} caracteres",
 	"min": "El campo no puede tener menos de {{expected}} caracteres",
 	"isInteger": "El campo debe ser un número entero",
-	"isFloat": "El campo debe ser un número decimal",
+	"isPositive": "El campo debe ser un número positivo",
 	"maxLength": "El campo no puede tener más de {{expected}} caracteres",
-	"minLength": "El campo no puede tener menos de {{expected}} caracteres"
+	"minLength": "El campo no puede tener menos de {{expected}} caracteres",
+	"isUpperCase": "El campo debe estar en mayúsculas",
+	"isLowerCase": "El campo debe estar en minúsculas",
+	"isEmail": "El campo debe ser un email válido"
 }

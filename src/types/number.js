@@ -1,5 +1,5 @@
 import TypeGeneric from './generic.js'
-import { isNumber } from '../utils/number.js'
+import { isNumber, isPositive } from '../utils/number.js'
 
 class TypeNumber extends TypeGeneric {
 
@@ -37,35 +37,16 @@ class TypeNumber extends TypeGeneric {
 	 * @param value - The value to check
 	 * @returns The function isInteger is being returned.
 	 */
-	isInteger(value) {
-		return this.isInteger(value)
+	isInteger() {
+		return this.isInteger(this.value)
 	}
 
 	/**
-	 * This function returns true if the value is an unsigned integer, otherwise it returns false.
-	 * @param value - The value to check.
-	 * @returns The function isUnsignedInteger is being returned.
+	 * If the value is positive, return true, otherwise return false.
+	 * @returns The value of the isPositive() method.
 	 */
-	isUnsignedInteger(value) {
-		return this.isUnsignedInteger(value)
-	}
-
-	/**
-	 * This function returns true if the value is a float, otherwise it returns false.
-	 * @param value - The value to check
-	 * @returns The function isFloat is being returned.
-	 */
-	isFloat(value) {
-		return this.isFloat(value)
-	}
-
-	/**
-	 * If the value is a float, return true, otherwise return false.
-	 * @param value - The value to check.
-	 * @returns The function isUnsignedFloat is being returned.
-	 */
-	isUnsignedFloat(value) {
-		return this.isUnsignedFloat(value)
+	isPositive() {
+		return isPositive(this.value)
 	}
 }
 

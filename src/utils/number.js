@@ -42,3 +42,12 @@ export const isFloat = (value) => {
 export const isUnsignedFloat = (value) => {
 	return isFloat(value) && value >= 0
 }
+
+/**
+ * IsPositive returns true if the value is a number and greater than 0.
+ * @param value - The value to be checked.
+ * @returns A function that takes a value and returns a boolean.
+ */
+export const isPositive = (value) => {
+	return isNumber(value) && value > 0
+}

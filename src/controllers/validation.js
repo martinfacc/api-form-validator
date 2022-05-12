@@ -27,7 +27,9 @@ const validateField = (field, schema, data) => {
  * @returns An object with the field names as keys and the error messages as values.
  */
 const validateSchema = (schema, data) => {
+	console.log(typeof schema)
 	const fields = Object.keys(schema)
+
 	const errors = {}
 	fields.forEach(field => {
 		const error = validateField(field, schema, data)
@@ -35,7 +37,6 @@ const validateSchema = (schema, data) => {
 	})
 	return errors
 }
-
 
 /**
  * It takes a schema and data, validates the data against the schema, and returns an object of errors.
@@ -46,7 +47,13 @@ const validateSchema = (schema, data) => {
 export const validate = (request, response, next) => {
 	try {
 		const { data, schema } = request.body
+
+		console.log({ data, schema })
+
 		const errors = validateSchema(schema, data)
+
+		console.log({ errors })
+
 		response.status(200).send({ errors })
 	}
 	catch (error) {

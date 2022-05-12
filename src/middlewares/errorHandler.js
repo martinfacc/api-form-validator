@@ -68,6 +68,9 @@ const findErrorInDictionary = (errorName) => {
  * @param next - The next middleware function in the stack.
  */
 const errorHandler = (error, request, response, next) => {
+
+	console.log({ error })
+
 	const errorName = error.name === 'Error' ? error.message : error.name
 	const findedError = findErrorInDictionary(errorName)
 
